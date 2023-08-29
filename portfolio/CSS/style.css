@@ -32,7 +32,7 @@ h1{
 
 .cabecalho__menu__link{
     font-family: var(--font-secundaria);
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--cor-terciaria);
     text-decoration: none;
@@ -43,17 +43,18 @@ h1{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 82px;
 }
 
 .apresentacao__conteudo{
-    width: 615px;
+    width: 50%;
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
 .apresentacao__conteudo__titulo{
-    font-size: 36px;
+    font-size: 2.25rem;
     font-family:var(--font-primaria);
 }
 
@@ -62,7 +63,7 @@ h1{
 }
 
 .apresentacao__conteudo__texto{
-    font-size: 24px;
+    font-size: 1.5rem;
     font-family: var(--font-secundaria);
 }
 
@@ -77,19 +78,19 @@ h1{
 .apresentacao__links__subtitulo{
     font-family:var(--font-primaria);
     font-family: 400;
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
-.apresentacao__links__link{
+.apresentacao__links__navegacao{
     /*background-color: var(--cor-terciaria);*/
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 16px;
     border: 2px solid var(--cor-terciaria);
-    width: 378px;
+    width: 50%;
     border-radius: 8px;
-    font-size: 24px;
+    font-size: 1.5rem;
     padding: 21.5px 0px;
     text-decoration: none;
     color: var(--cor-secundaria);
@@ -101,12 +102,32 @@ h1{
     background-color: var(--cor-hover);
 }
 
+.apresentacao__imagem{
+    width: 50%;
+}
+
 .rodape{
     color: var(--cor-primaria);
     background-color: var(--cor-terciaria);
     padding: 24px;
     text-align: center;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-family: var(--font-secundaria);
     font-weight: 400px;
 }
+
+@media (max-width: 1200px){
+    .cabecalho{
+        padding : 10%;
+
+    }
+
+    .cabecalho__menu{
+        justify-content: center;
+    }
+
+    .apresentacao{
+        flex-direction: column-reverse;
+    }
+}
+
