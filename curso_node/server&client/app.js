@@ -1,30 +1,31 @@
-const express = require('express')
-const morgan = require('morgan')
+const express = require('express');
+const morgan = require('morgan');
+const mongoose = require('mongoose');
+
+const blogRoutes = require('./routes/blogRoutes');
+
 
 //express app
 const app = express();
 
 //connect with mongodb
-const dbURI = 'mongodb+srv://Zaptas:Zaptas22t22t@nodetuts.1dnjc.mongodb.net/?retryWrites=true&w=majority&appName=NodeTuts'
+const dbURI = 'mongodb+srv://Zaptas:Zaptas22t22t@nodetuts.1dnjc.mongodb.net/NodeTuts?retryWrites=true&w=majority&appName=NodeTuts'
+
+mongoose.connect(dbURI)
+    .then((result) => app.listen(3000))
+    .catch((err) => console.log(err));
 
 //register view engine
 app.set('view engine', 'ejs');
 
-
-//listen for request
-app.listen(3000)
-
 //middleware & static files
 app.use(express.static('public'))
+app.use(express.urlencoded({ extended : true }))
 app.use(morgan('dev'));
 
+//routes
 app.get('/', (req, res) => {
-    const blogs = [
-        {title : 'Yoshi finds eggs', snippet : 'Lorem ipsum dolor sit amet consectetur'},
-        {title : 'Mario finds stars', snippet : 'Lorem ipsum dolor sit amet consectetur'},
-        {title : 'How to defeat Bowser', snippet : 'Lorem ipsum dolor sit amet consectetur'},
-    ];
-    res.render('index', { title : 'Home', blogs : blogs });
+    res.redirect('/blogs')
 });
 
 app.get('/about', (req, res) => {
@@ -32,14 +33,13 @@ app.get('/about', (req, res) => {
     res.render('about', { title: 'About'})
 });
 
-app.get('/blogs/create', (req, res) => {
-    res.render('create', { title: 'create a new blog'})
-})
-
 //redirects
 app.get('/about-us', (req, res) => {
     res.redirect('/about');
 });
+
+//blogs routes
+app.use('/blogs', blogRoutes)
 
 //404 page // sempre última rota
 app.use((req, res) => {
