@@ -1,75 +1,15 @@
-export default function Notes(){
+export default function Notes({ data }){
     return(
         <>
         <li className="notepad-infos">
             <div>
-              <strong>Fazer Compras</strong>
+              <strong>{data.title}</strong>
               <div>
                 x
               </div>
             </div>
 
-            <textarea>lorem ipsum e nao sei qo sei lao oq</textarea>
-            <span>!</span>
-        </li>
-
-        <li className="notepad-infos">
-            <div>
-              <strong>Fazer Compras</strong>
-              <div>
-                x
-              </div>
-            </div>
-
-            <textarea>lorem ipsum e nao sei qo sei lao oq</textarea>
-            <span>!</span>
-        </li>
-
-        <li className="notepad-infos">
-            <div>
-              <strong>Fazer Compras</strong>
-              <div>
-                x
-              </div>
-            </div>
-
-            <textarea>lorem ipsum e nao sei qo sei lao oq</textarea>
-            <span>!</span>
-        </li>
-
-        <li className="notepad-infos">
-            <div>
-              <strong>Fazer Compras</strong>
-              <div>
-                x
-              </div>
-            </div>
-
-            <textarea>lorem ipsum e nao sei qo sei lao oq</textarea>
-            <span>!</span>
-        </li>
-
-        <li className="notepad-infos">
-            <div>
-              <strong>Fazer Compras</strong>
-              <div>
-                x
-              </div>
-            </div>
-
-            <textarea>lorem ipsum e nao sei qo sei lao oq</textarea>
-            <span>!</span>
-        </li>
-
-        <li className="notepad-infos">
-            <div>
-              <strong>Fazer Compras</strong>
-              <div>
-                x
-              </div>
-            </div>
-
-            <textarea>lorem ipsum e nao sei qo sei lao oq</textarea>
+            <textarea defaultValue={data.notes}></textarea>
             <span>!</span>
         </li>
         </>
