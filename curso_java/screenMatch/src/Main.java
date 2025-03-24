@@ -1,11 +1,17 @@
+import br.com.alura.screenmatch.models.Movie;
+
 public class Main {
     public static void main(String[] args) {
-        Film myFilm = new Film();
-        myFilm.name = "Poderoso Chefão";
-        myFilm.releaseYear = 1970;
-        myFilm.duration = 180;
+        Movie myMovie = new Movie();
+        myMovie.setName("Poderoso Chefão");
+        myMovie.setReleaseYear(1970);
+        myMovie.setDuration(180);
 
-        System.out.println(myFilm.name);
-        System.out.println(myFilm.releaseYear);
+        myMovie.displayInfo();
+        myMovie.rate(8);
+        myMovie.rate(5);
+        myMovie.rate(10);
+        System.out.println("Total de avaliações: " + myMovie.getTotalRatings());
+        System.out.println(myMovie.catchRating());
     }
 }
