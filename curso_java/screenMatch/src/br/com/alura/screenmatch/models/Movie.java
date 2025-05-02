@@ -15,6 +15,6 @@ public class Movie extends Title implements Rated {
 
     @Override
     public int getRated() {
-        return 0;
+        return (int) catchRating() / 2;
     }
 }
