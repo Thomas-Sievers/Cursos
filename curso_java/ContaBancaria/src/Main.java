@@ -12,7 +12,7 @@ public class Main
         double receiveMoney = 0;
         double transferMoney = 0;
 
-        if (name == "") {
+        if (name.isEmpty()) {
             System.out.println("************************");
             System.out.println("Let's create your new bank account!");
             System.out.println("Type your name: ");
